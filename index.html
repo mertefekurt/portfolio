@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mert Efe Kurt - Portföy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Anasayfa</a></li>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#skills">Yetenekler</a></li>
+                <li><a href="#experience">Deneyim</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="scroll-indicator" class="fixed right-0 top-0 w-1 h-0 bg-secondary z-50"></div>
+
+    <div id="particles-hero" class="particles-js"></div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <p class="greeting">Merhaba ben;</p>
+                <h1 class="hero-name">Mert Efe Kurt</h1>
+                <div class="hero-image-container">
+                    <img src="img/photo.png" alt="Mert Efe Kurt" class="hero-photo">
+                </div>
+                <div class="social-links">
+                    <a href="" id="github" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">GitHub</span>
+                    </a>
+                    <a href="" id="linkedin" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="tooltip">LinkedIn</span>
+                    </a>
+                    <a href="" id="email-link" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span class="tooltip">E-posta</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="code-animation">
+                    <pre><code class="language-javascript">
+class SoftwareDeveloper {
+    constructor() {
+        this.name = "Mert Efe Kurt";
+        this.role = "Database Programmer";
+        this.languages = ["SQL", "Python", "JavaScript"];
+        this.expertise = ["Database Design", "ETL", "Performance"];
+    }
+
+    hakkimda() {
+        return {
+            konum: "İstanbul, Türkiye",
+            odakAlan: "Veritabanı Geliştirme",
+            hedef: "Verimli ve Ölçeklenebilir Sistemler"
+        };
+    }
+}
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title">Yeteneklerim</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programlama Dilleri</h3>
+                <div id="languages-list" class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-python-plain colored"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-mysql-plain colored"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-typescript-plain colored"></i>
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-html5-plain colored"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-css3-plain colored"></i>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Çatılar & Kütüphaneler</h3>
+                <div id="frameworks-list" class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-microsoftsqlserver-plain colored"></i>
+                        <span>MS SQL Server</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-postgresql-plain colored"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-mongodb-plain colored"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-nodejs-plain colored"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-react-original colored"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-express-original colored"></i>
+                        <span>Express.js</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Araçlar & Teknolojiler</h3>
+                <div id="tools-list" class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-git-plain colored"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-docker-plain colored"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-azure-plain colored"></i>
+                        <span>Azure</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-linux-plain colored"></i>
+                        <span>Linux</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-vscode-plain colored"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-visualstudio-plain colored"></i>
+                        <span>Visual Studio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="experience-container">
+            <h2 class="section-title">Deneyim</h2>
+            <div class="experience-timeline">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Projelerim</h2>
+            <div id="projects-container" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <section id="github" class="github-section">
+        <h2 class="section-title">GitHub Aktivitelerim</h2>
+        
+        <div id="github-stats" class="github-stats">
+        </div>
+
+        <div class="github-subsection">
+            <h3>En Çok Kullandığım Diller</h3>
+            <div id="github-languages" class="language-stats">
+            </div>
+        </div>
+
+        <div class="github-subsection">
+            <h3>Son Aktivitelerim</h3>
+            <div id="github-activity" class="activity-feed">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">İletişim</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:mertk.mek@gmail.com" id="email" class="contact-link"></a>
+                <span class="contact-label">E-posta</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/mertefekurt" target="_blank" rel="noopener noreferrer" id="github-username" class="contact-link"></a>
+                <span class="contact-label">GitHub</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/mertefekurt" target="_blank" rel="noopener noreferrer" id="linkedin-username" class="contact-link"></a>
+                <span class="contact-label">LinkedIn</span>
+            </div>
+        </div>
+    </section>
+
+    <a href="#projects" class="floating-btn projects-btn" title="Projelerime Git">
+        <i class="fas fa-briefcase"></i>
+    </a>
+    
+    <button class="floating-btn scroll-top-btn" id="scrollTopBtn" title="Yukarı Çık">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <p>&copy; 2025 Mert Efe Kurt</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+    <script src="js/github.js"></script>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

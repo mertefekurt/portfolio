@@ -1,0 +1,293 @@
+/* ==========================================
+   Experience Section Styles
+   ========================================== */
+.experience {
+    padding: var(--section-padding);
+    background: var(--gradient-section);
+    position: relative;
+    min-height: 100vh;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at top left, rgba(100, 255, 218, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(100, 255, 218, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: var(--z-base);
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: calc(var(--z-base) + 1);
+}
+
+.experience-timeline {
+    position: relative;
+    padding-left: 0;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--secondary-color), rgba(100, 255, 218, 0.3));
+    transform: translateX(-50%);
+}
+
+.experience-item {
+    position: relative;
+    padding-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.experience-item:last-child {
+    padding-bottom: 0;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 7.5rem;
+    top: 0.5rem;
+    width: 14px;
+    height: 14px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.experience-date {
+    position: relative;
+    width: 100%;
+    text-align: right;
+    line-height: 1.6;
+    padding-right: var(--spacing-md);
+}
+
+.date-range {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.duration {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    font-style: italic;
+    margin-top: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.experience-content {
+    background: rgba(17, 34, 64, 0.5);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    border: var(--border-width) solid var(--border-color);
+    backdrop-filter: blur(20px);
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    grid-column: 2;
+}
+
+.experience-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--secondary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.experience-content:hover::before {
+    opacity: 1;
+}
+
+.experience-content:hover {
+    transform: translateX(12px);
+    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-lg);
+    background: rgba(17, 34, 64, 0.85);
+}
+
+.company-header {
+    margin-bottom: 2rem;
+}
+
+.position {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    transition: var(--transition);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.experience-content:hover .position {
+    color: var(--secondary-color);
+}
+
+.company {
+    font-size: var(--font-size-xl);
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-mono);
+}
+
+.location {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location i {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+
+.achievements {
+    margin-top: 1.5rem;
+}
+
+.achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements li {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+    position: relative;
+    line-height: 1.9;
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.achievements li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.achievements li:hover {
+    color: var(--text-color-light);
+}
+
+.achievements strong {
+    color: var(--text-color-light);
+    font-weight: 600;
+}
+
+/* Animation */
+.experience-item {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .experience-item {
+        grid-template-columns: 1fr;
+        padding-left: 3rem;
+        gap: var(--spacing-md);
+    }
+    
+    .experience-date {
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: var(--spacing-sm);
+    }
+    
+    .experience-content {
+        grid-column: 1;
+    }
+    
+    .experience-timeline::before {
+        left: 1.5rem;
+    }
+    
+    .experience-item::before {
+        left: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience {
+        padding: 4rem 5%;
+    }
+    
+    .experience-timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .experience-item {
+        padding-left: 1.5rem;
+        padding-bottom: 3rem;
+    }
+    
+    .experience-item::before {
+        left: -1.25rem;
+    }
+    
+    .experience-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .position {
+        font-size: 1.5rem;
+    }
+    
+    .company {
+        font-size: 1.1rem;
+    }
+    
+    .achievements li {
+        font-size: 0.95rem;
+        padding-left: 1.5rem;
+    }
+}
