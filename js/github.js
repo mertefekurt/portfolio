@@ -33,6 +33,9 @@ async function fetchGitHubData() {
     }
 }
 
+/**
+ * Update the summary counters shown in the GitHub section.
+ */
 function updateGitHubStats(userData, reposData) {
     const stats = {
         repos: userData.public_repos,
@@ -56,6 +59,9 @@ function updateGitHubStats(userData, reposData) {
     `;
 }
 
+/**
+ * Build repository language counts and render the top languages.
+ */
 function loadLanguageStats(reposData) {
     const languages = {};
     
@@ -103,6 +109,9 @@ async function loadRecentActivity() {
     }
 }
 
+/**
+ * Convert a GitHub event payload into a timeline item.
+ */
 function createActivityHTML(activity, date) {
     let icon, text;
     
@@ -144,6 +153,9 @@ function createActivityHTML(activity, date) {
     `;
 }
 
+/**
+ * Render neutral placeholders when GitHub data cannot be loaded.
+ */
 function showFallbackData() {
     document.getElementById('github-stats').innerHTML = `
         <div class="stat">

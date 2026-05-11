@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeSkillBars();
 });
 
+/**
+ * Animate skill bars once they enter the viewport.
+ */
 function initializeSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
     
@@ -78,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/**
+ * Animate a numeric label using an eased counter.
+ */
 function animateNumber(element, start, end, suffix, duration) {
     const startTime = performance.now();
     

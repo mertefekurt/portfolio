@@ -9,13 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(cursorOutline);
     
     let cursorVisible = true;
-    let cursorEnlarged = false;
-    
     const endX = window.innerWidth / 2;
     const endY = window.innerHeight / 2;
-    
-    let distanceX = 0;
-    let distanceY = 0;
     
     let mouseX = endX;
     let mouseY = endY;
@@ -46,9 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function updateCursor() {
-        distanceX = mouseX - cursorDot.offsetLeft;
-        distanceY = mouseY - cursorDot.offsetTop;
-        
         cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
         cursorOutline.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
     }
@@ -66,23 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     document.addEventListener('mousedown', () => {
-        cursorEnlarged = true;
         toggleCursorSize(true);
     });
     
     document.addEventListener('mouseup', () => {
-        cursorEnlarged = false;
         toggleCursorSize(false);
     });
     
     const clickables = document.querySelectorAll('a, button, .skill-item, .social-icon');
     clickables.forEach((elem) => {
         elem.addEventListener('mouseover', () => {
-            cursorEnlarged = true;
             toggleCursorSize(true);
         });
         elem.addEventListener('mouseout', () => {
-            cursorEnlarged = false;
             toggleCursorSize(false);
         });
     });

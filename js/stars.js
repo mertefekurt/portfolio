@@ -1,6 +1,10 @@
 
 function createStars() {
     const stars = document.getElementById('stars');
+    if (!stars) {
+        return;
+    }
+
     const count = 200; 
 
     for (let i = 0; i < count; i++) {
@@ -28,6 +32,10 @@ window.addEventListener('load', createStars);
 
 window.addEventListener('resize', () => {
     const stars = document.getElementById('stars');
+    if (!stars) {
+        return;
+    }
+
     stars.innerHTML = '';
     createStars();
 });

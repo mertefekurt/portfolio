@@ -27,7 +27,7 @@ function initializePersonalInfo() {
 }
 
 function initializeSkills() {
-    console.log('Skills section initialized with static content');
+    // Skills are defined statically in the HTML; this hook is kept for future data-driven sections.
 }
 
 function initializeExperience() {
@@ -89,7 +89,6 @@ function initializeProjects() {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
         
-            // Status badge color
         const statusClass = project.status === 'Aktif' ? 'status-active' : 
                            project.status === 'Geliştirme Aşamasında' ? 'status-development' : 'status-planning';
         
@@ -139,7 +138,6 @@ function initializeProjects() {
 function initializeContact() {
     const emailElement = document.getElementById('email');
     const githubElement = document.getElementById('github-username');
-    const linkedinElements = document.querySelectorAll('#linkedin-username');
     
     if (emailElement) {
         emailElement.textContent = config.email;
@@ -168,5 +166,8 @@ function initializeContact() {
 
 
 function updateCopyright() {
-
+    const footerText = document.querySelector('footer p');
+    if (footerText) {
+        footerText.textContent = `© ${new Date().getFullYear()} ${config.name}`;
+    }
 }
