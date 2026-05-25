@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    /** Handles the scroll percent workflow. */
     const scrollPercent = (scrollTop / docHeight) * 100;
 
     const progressBar = document.getElementById("scroll-indicator");
