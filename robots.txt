@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mertefekurt.me/sitemap.xml
