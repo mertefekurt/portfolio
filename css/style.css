@@ -267,6 +267,13 @@ h1 {
     letter-spacing: 0;
 }
 
+.title-accent {
+    color: transparent;
+    background: linear-gradient(135deg, #e0f2fe, var(--cyan) 42%, var(--accent) 74%, #fef08a);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 h2 {
     margin-bottom: 0;
     font-size: clamp(2rem, 4.7vw, 4.35rem);
@@ -292,9 +299,27 @@ h3 {
 
 .hero-lead {
     max-width: 670px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.35rem;
     color: var(--muted);
     font-size: clamp(1.05rem, 1.7vw, 1.24rem);
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 2rem;
+}
+
+.hero-badges span {
+    padding: 0.48rem 0.66rem;
+    border: 1px solid rgba(105, 211, 176, 0.24);
+    border-radius: var(--radius);
+    background:
+        linear-gradient(135deg, rgba(105, 211, 176, 0.11), rgba(138, 180, 255, 0.055));
+    color: #dce8f7;
+    font-size: 0.82rem;
+    font-weight: 820;
 }
 
 .hero-actions {
@@ -449,6 +474,67 @@ pre {
     margin-bottom: 0.15rem;
     font-size: 1.05rem;
     color: var(--accent);
+}
+
+.capability-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 0;
+}
+
+.capability-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 190px;
+    display: grid;
+    align-content: space-between;
+    gap: 1.15rem;
+    padding: 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--capability-color, var(--accent)) 20%, transparent), transparent 12rem),
+        rgba(17, 29, 46, 0.72);
+    transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+}
+
+.capability-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--capability-color, var(--accent)) 45%, transparent);
+}
+
+.capability-card > .icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--capability-color, var(--accent));
+}
+
+.capability-card p {
+    margin-bottom: 0.5rem;
+    color: color-mix(in srgb, var(--capability-color, var(--accent)) 72%, white);
+    font-size: 0.76rem;
+    font-weight: 850;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.capability-card h2 {
+    max-width: 340px;
+    font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+    line-height: 1.08;
+}
+
+.capability-automation {
+    --capability-color: #a3e635;
+}
+
+.capability-data {
+    --capability-color: #38bdf8;
+}
+
+.capability-visibility {
+    --capability-color: #f59e0b;
 }
 
 .signal-grid span {
@@ -750,6 +836,35 @@ pre {
     padding-top: 1rem;
 }
 
+.project-insight {
+    margin-top: 1rem;
+    padding: 0.82rem;
+    border: 1px solid color-mix(in srgb, var(--project-color, var(--accent)) 26%, transparent);
+    border-radius: var(--radius);
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--project-color, var(--accent)) 12%, transparent), rgba(255, 255, 255, 0.025));
+}
+
+.project-insight span,
+.project-insight strong {
+    display: block;
+}
+
+.project-insight span {
+    margin-bottom: 0.18rem;
+    color: color-mix(in srgb, var(--project-color, var(--accent)) 72%, white);
+    font-size: 0.7rem;
+    font-weight: 850;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.project-insight strong {
+    color: #edf4ff;
+    font-size: 0.94rem;
+    line-height: 1.35;
+}
+
 .project-details span {
     padding: 0.32rem 0.5rem;
     border-color: color-mix(in srgb, var(--project-color, var(--accent)) 28%, transparent);
@@ -921,6 +1036,7 @@ pre {
 
     .hero-layout,
     .profile-section,
+    .capability-strip,
     .experience-card,
     .contact-panel {
         grid-template-columns: 1fr;
@@ -963,6 +1079,7 @@ pre {
     }
 
     .signal-grid,
+    .capability-strip,
     .stack-showcase,
     .project-board {
         grid-template-columns: 1fr;
