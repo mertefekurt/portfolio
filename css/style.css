@@ -12,6 +12,10 @@
     --line-strong: rgba(226, 232, 240, 0.2);
     --accent: #69d3b0;
     --accent-2: #8ab4ff;
+    --violet: #b794f6;
+    --cyan: #38bdf8;
+    --orange: #f59e0b;
+    --pink: #f472b6;
     --gold: #d8b56d;
     --danger: #fb7185;
     --shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
@@ -34,8 +38,10 @@ body {
     background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
         linear-gradient(180deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        radial-gradient(circle at 10% 0%, rgba(105, 211, 176, 0.13), transparent 32rem),
-        radial-gradient(circle at 90% 12%, rgba(138, 180, 255, 0.1), transparent 30rem),
+        radial-gradient(circle at 9% 4%, rgba(105, 211, 176, 0.2), transparent 31rem),
+        radial-gradient(circle at 87% 12%, rgba(138, 180, 255, 0.18), transparent 30rem),
+        radial-gradient(circle at 63% 48%, rgba(180, 126, 247, 0.11), transparent 34rem),
+        radial-gradient(circle at 20% 88%, rgba(245, 158, 11, 0.09), transparent 28rem),
         linear-gradient(180deg, var(--bg), var(--bg-2) 48%, #07101d);
     background-size: 64px 64px, 64px 64px, auto, auto, auto;
     color: var(--text);
@@ -140,7 +146,9 @@ button:focus-visible {
     place-items: center;
     border: 1px solid var(--line-strong);
     border-radius: var(--radius);
-    background: linear-gradient(145deg, rgba(105, 211, 176, 0.18), rgba(138, 180, 255, 0.08));
+    background:
+        linear-gradient(145deg, rgba(105, 211, 176, 0.28), rgba(138, 180, 255, 0.18) 52%, rgba(180, 126, 247, 0.2)),
+        #102033;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -152,7 +160,7 @@ button:focus-visible {
     width: 0.55rem;
     height: 0.55rem;
     border-radius: 2px;
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--cyan));
 }
 
 .brand-mark span {
@@ -316,13 +324,14 @@ h3 {
 }
 
 .button-primary {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), #7dd3fc);
     color: #06130f;
+    box-shadow: 0 14px 34px rgba(105, 211, 176, 0.22);
 }
 
 .button-secondary {
     border-color: var(--line);
-    background: rgba(255, 255, 255, 0.045);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(138, 180, 255, 0.05));
     color: var(--text);
 }
 
@@ -333,7 +342,10 @@ h3 {
     padding: 1rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: linear-gradient(180deg, rgba(17, 29, 46, 0.92), rgba(9, 18, 32, 0.92));
+    background:
+        radial-gradient(circle at 18% 8%, rgba(105, 211, 176, 0.22), transparent 14rem),
+        radial-gradient(circle at 88% 18%, rgba(138, 180, 255, 0.18), transparent 16rem),
+        linear-gradient(180deg, rgba(17, 29, 46, 0.94), rgba(9, 18, 32, 0.92));
     box-shadow: var(--shadow);
 }
 
@@ -343,7 +355,7 @@ h3 {
     inset: -1px;
     z-index: -1;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(105, 211, 176, 0.55), transparent 36%, rgba(138, 180, 255, 0.3));
+    background: linear-gradient(135deg, rgba(105, 211, 176, 0.68), transparent 34%, rgba(138, 180, 255, 0.44), rgba(180, 126, 247, 0.28));
     opacity: 0.6;
 }
 
@@ -359,7 +371,8 @@ h3 {
     width: 86px;
     height: 86px;
     border-radius: var(--radius);
-    border: 1px solid var(--line-strong);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 4px rgba(105, 211, 176, 0.15);
     object-fit: cover;
 }
 
@@ -379,7 +392,8 @@ h3 {
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: #07101d;
+    background: linear-gradient(180deg, #07101d, #050a13);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .console-header {
@@ -423,7 +437,7 @@ pre {
     padding: 0.85rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.035);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(105, 211, 176, 0.035));
 }
 
 .signal-grid strong,
@@ -434,6 +448,7 @@ pre {
 .signal-grid strong {
     margin-bottom: 0.15rem;
     font-size: 1.05rem;
+    color: var(--accent);
 }
 
 .signal-grid span {
@@ -475,7 +490,7 @@ pre {
 .project-details span {
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.045);
     color: var(--muted);
     font-size: 0.82rem;
     font-weight: 780;
@@ -503,7 +518,11 @@ pre {
     padding: 1.25rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(17, 29, 46, 0.76);
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--card-color, var(--accent)) 18%, transparent), transparent 11rem),
+        rgba(17, 29, 46, 0.76);
     transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
 }
 
@@ -511,14 +530,19 @@ pre {
 .project-card:hover,
 .project-feature:hover {
     transform: translateY(-4px);
-    border-color: rgba(105, 211, 176, 0.38);
-    background: rgba(22, 35, 56, 0.88);
+    border-color: color-mix(in srgb, var(--card-color, var(--accent)) 48%, transparent);
+    background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--card-color, var(--accent)) 24%, transparent), transparent 12rem),
+        rgba(22, 35, 56, 0.9);
 }
 
 .primary-stack {
     grid-row: span 2;
     min-height: 100%;
-    background: linear-gradient(180deg, rgba(105, 211, 176, 0.14), rgba(17, 29, 46, 0.82));
+    background:
+        radial-gradient(circle at 22% 10%, rgba(255, 214, 102, 0.16), transparent 12rem),
+        radial-gradient(circle at 90% 0%, rgba(55, 118, 171, 0.28), transparent 15rem),
+        linear-gradient(180deg, rgba(105, 211, 176, 0.12), rgba(17, 29, 46, 0.82));
 }
 
 .stack-icon,
@@ -527,10 +551,39 @@ pre {
     height: 2.75rem;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(105, 211, 176, 0.25);
+    border: 1px solid color-mix(in srgb, var(--icon-color, var(--accent)) 45%, transparent);
     border-radius: var(--radius);
-    background: rgba(105, 211, 176, 0.09);
-    color: var(--accent);
+    background:
+        linear-gradient(145deg, color-mix(in srgb, var(--icon-color, var(--accent)) 20%, transparent), rgba(255, 255, 255, 0.04));
+    color: var(--icon-color, var(--accent));
+    box-shadow: 0 14px 28px color-mix(in srgb, var(--icon-color, var(--accent)) 14%, transparent);
+}
+
+.tech-python {
+    --card-color: #3776ab;
+    --icon-color: #ffd43b;
+}
+
+.tech-sql {
+    --card-color: #38bdf8;
+    --icon-color: #38bdf8;
+}
+
+.tech-api {
+    --card-color: #b794f6;
+    --icon-color: #b794f6;
+}
+
+.tech-docker {
+    --card-color: #2496ed;
+    --icon-color: #2496ed;
+}
+
+.tech-python .stack-icon .icon,
+.tech-docker .stack-icon .icon,
+.project-photo .project-icon .icon {
+    fill: currentColor;
+    stroke: none;
 }
 
 .primary-stack .stack-icon {
@@ -573,7 +626,21 @@ pre {
     align-items: center;
     gap: 0.45rem;
     padding: 0.52rem 0.68rem;
+    border-color: color-mix(in srgb, var(--tool-color, var(--accent)) 32%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--tool-color, var(--accent)) 13%, transparent), rgba(255, 255, 255, 0.035));
 }
+
+.toolbelt .icon {
+    color: var(--tool-color, var(--accent));
+}
+
+.tool-git { --tool-color: #f97316; }
+.tool-terminal { --tool-color: #a3e635; }
+.tool-chart { --tool-color: #38bdf8; }
+.tool-quality { --tool-color: #69d3b0; }
+.tool-html { --tool-color: #f97316; color: #fed7aa; }
+.tool-css { --tool-color: #60a5fa; color: #bfdbfe; }
+.tool-js { --tool-color: #facc15; color: #fef08a; }
 
 .projects-section {
     border-top: 1px solid var(--line);
@@ -607,7 +674,11 @@ pre {
 .project-card {
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(17, 29, 46, 0.72);
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--project-color, var(--accent)) 14%, transparent), transparent 13rem),
+        rgba(17, 29, 46, 0.72);
     transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
 }
 
@@ -618,7 +689,10 @@ pre {
     gap: 1.2rem;
     align-items: start;
     padding: 1.35rem;
-    background: linear-gradient(135deg, rgba(105, 211, 176, 0.13), rgba(17, 29, 46, 0.76));
+    background:
+        radial-gradient(circle at 4% 0%, rgba(105, 211, 176, 0.24), transparent 15rem),
+        radial-gradient(circle at 92% 25%, rgba(138, 180, 255, 0.16), transparent 17rem),
+        linear-gradient(135deg, rgba(105, 211, 176, 0.13), rgba(17, 29, 46, 0.76));
 }
 
 .project-card {
@@ -630,7 +704,34 @@ pre {
 }
 
 .visual-card {
-    background: linear-gradient(180deg, rgba(138, 180, 255, 0.1), rgba(17, 29, 46, 0.72));
+    background:
+        radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.16), transparent 12rem),
+        linear-gradient(180deg, rgba(138, 180, 255, 0.1), rgba(17, 29, 46, 0.72));
+}
+
+.project-linkrot {
+    --project-color: #69d3b0;
+    --icon-color: #69d3b0;
+}
+
+.project-latency {
+    --project-color: #38bdf8;
+    --icon-color: #38bdf8;
+}
+
+.project-api {
+    --project-color: #b794f6;
+    --icon-color: #b794f6;
+}
+
+.project-photo {
+    --project-color: #f472b6;
+    --icon-color: #f472b6;
+}
+
+.project-dashboard {
+    --project-color: #f59e0b;
+    --icon-color: #f59e0b;
 }
 
 .project-content {
@@ -651,6 +752,8 @@ pre {
 
 .project-details span {
     padding: 0.32rem 0.5rem;
+    border-color: color-mix(in srgb, var(--project-color, var(--accent)) 28%, transparent);
+    background: color-mix(in srgb, var(--project-color, var(--accent)) 10%, rgba(255, 255, 255, 0.03));
 }
 
 .project-feature .project-details {
@@ -668,7 +771,9 @@ pre {
     padding: 1.35rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(17, 29, 46, 0.76);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(138, 180, 255, 0.15), transparent 18rem),
+        rgba(17, 29, 46, 0.76);
 }
 
 .experience-meta {
@@ -706,7 +811,8 @@ pre {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background:
-        linear-gradient(135deg, rgba(105, 211, 176, 0.11), transparent 44%),
+        radial-gradient(circle at 10% 5%, rgba(105, 211, 176, 0.18), transparent 18rem),
+        radial-gradient(circle at 95% 15%, rgba(244, 114, 182, 0.12), transparent 18rem),
         rgba(17, 29, 46, 0.78);
 }
 
@@ -723,7 +829,7 @@ pre {
     padding: 0.85rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.035);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(105, 211, 176, 0.025));
     transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
