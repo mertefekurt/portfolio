@@ -1,19 +1,35 @@
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
+const themeToggle = document.querySelector("[data-theme-toggle]");
 const year = document.querySelector("[data-year]");
+const sections = document.querySelectorAll("main section[id]");
+const links = document.querySelectorAll(".nav-links a[href^='#']");
+const revealItems = document.querySelectorAll("[data-reveal]");
 
 if (year) {
     year.textContent = new Date().getFullYear();
 }
 
-if (header) {
-    const updateHeader = () => {
-        header.classList.toggle("is-scrolled", window.scrollY > 12);
-    };
+if (header && "IntersectionObserver" in window) {
+    const headerSentinel = document.createElement("span");
+    headerSentinel.className = "header-sentinel";
+    header.before(headerSentinel);
 
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
+    const headerObserver = new IntersectionObserver(([entry]) => {
+        header.classList.toggle("is-scrolled", !entry.isIntersecting);
+    });
+
+    headerObserver.observe(headerSentinel);
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const currentTheme = document.documentElement.dataset.theme;
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem("portfolio-theme", nextTheme);
+    });
 }
 
 if (navToggle && navLinks) {
@@ -43,10 +59,6 @@ if (navToggle && navLinks) {
     });
 }
 
-const sections = document.querySelectorAll("main section[id]");
-const links = document.querySelectorAll(".nav-links a[href^='#']");
-const revealItems = document.querySelectorAll(".reveal");
-
 if ("IntersectionObserver" in window && sections.length && links.length) {
     const activeSection = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -59,7 +71,7 @@ if ("IntersectionObserver" in window && sections.length && links.length) {
             });
         });
     }, {
-        rootMargin: "-35% 0px -55% 0px",
+        rootMargin: "-38% 0px -55% 0px",
         threshold: 0.01
     });
 
@@ -69,13 +81,15 @@ if ("IntersectionObserver" in window && sections.length && links.length) {
 if ("IntersectionObserver" in window && revealItems.length) {
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                revealObserver.unobserve(entry.target);
+            if (!entry.isIntersecting) {
+                return;
             }
+
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
         });
     }, {
-        rootMargin: "0px 0px -10% 0px",
+        rootMargin: "0px 0px -8% 0px",
         threshold: 0.12
     });
 
