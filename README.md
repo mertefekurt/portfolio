@@ -31,7 +31,7 @@ http://127.0.0.1:8000
 index.html       Main portfolio page
 css/style.css    Responsive layout and visual system
 js/main.js       Navigation and small UI behavior
-img/photo.jpg    Profile photo used in the hero section
+img/photo.jpg    Profile image used in social sharing metadata
 img/icons/       Local technology and social icons
 img/projects/    Project screenshots and code previews
 fonts/           Self-hosted webfont files
